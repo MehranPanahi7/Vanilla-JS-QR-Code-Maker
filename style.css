@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;500;700;900&display=swap');
+
+@font-face {
+    font-family: 'Lalezar';
+    src: url(Files/Lalezar-Regular\ \(2\).ttf);
+}
+
+/* Style Definitons */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans Arabic', 'Tahoma';
+    --purpleMain : #800080;
+}
+
+body {
+    background-color: var(--purpleMain);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    width: 500px;
+    height: auto;
+    padding: 30px;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.container .info h1 {
+    font-family: 'Lalezar';
+    font-size: 40px;
+}
+
+.container form :where(input, button) {
+    outline: none;
+    border: none;
+    font-size: 20px;
+    padding: 15px;
+    width: 100%;
+}
+
+.container form input {
+    border: 1px solid darkgray;
+    margin: 20px 0 30px;
+}
+
+.container form button {
+    background-color: var(--purpleMain);
+    color: #fff;
+    font-weight: 900x;
+    cursor: pointer;
+}
+
+.container .qr-code {
+    text-align: center;
+    margin: 30px auto 10px;
+    border: 1px solid black;
+    width: 400px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.container .hidden {
+    display: none;
+}
+
+/* Span Animated */
+
+.container span:nth-child(1) {
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, transparent, #17f3fd);
+    animation: animate_one 2s linear infinite;
+}
+
+@keyframes animate_one {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.container span:nth-child(2) {
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(to bottom, transparent, #17f3fd);
+    animation: animate_two 2s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes animate_two {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.container span:nth-child(3) {
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(to left, transparent, #17f3fd);
+    animation: animate_three 2s linear infinite;
+}
+
+@keyframes animate_three {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.container span:nth-child(4) {
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(to top, transparent, #17f3fd);
+    animation: animate_four 2s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes animate_four {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
